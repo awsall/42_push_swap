@@ -6,7 +6,7 @@
 /*   By: awsall <awsall@student.42urduliz.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 11:58:20 by awsall            #+#    #+#             */
-/*   Updated: 2026/06/17 17:05:03 by awsall           ###   ########.fr       */
+/*   Updated: 2026/06/18 16:39:25 by awsall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,10 @@ void	pa(t_list **stack_a, t_list **stack_b)
 {
 	if (!*stack_b)
 		return ;
-	int	temp;
+	int	move_node;
 
-	temp = *(int *)(*stack_b)->content;
-	*(int *)*stack_b->content = ft_lstadd_front(*(int*)*stack_a);
+	move_node = *(int *)(*stack_b);
+	
+	
 }	
 	

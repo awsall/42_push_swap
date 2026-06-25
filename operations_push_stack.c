@@ -6,7 +6,7 @@
 /*   By: awsall <awsall@student.42urduliz.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 11:58:20 by awsall            #+#    #+#             */
-/*   Updated: 2026/06/18 16:39:25 by awsall           ###   ########.fr       */
+/*   Updated: 2026/06/19 12:14:55 by awsall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,26 @@ void	ss(t_list **stack_a, t_list **stack_b)
 		sb(stack_b);
 }
 
-void	ft_lstadd_front(t_list **lst, t_list *new);
-
 void	pa(t_list **stack_a, t_list **stack_b)
 {
-	if (!*stack_b)
-		return ;
-	int	move_node;
+	t_list	*move_node;
 
-	move_node = *(int *)(*stack_b);
-	
-	
+	if (!stack_b || !stack_a || !*stack_b)
+		return ;
+	move_node = *stack_b;
+	*stack_b = move_node->next;
+	move_node->next = *stack_a;
+	*stack_a = move_node; 
 }	
-	
+
+void	pb(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*move_node;
+
+	if (!stack_a || !stack_b || !*stack_a)
+		return ;
+	move_node = *stack_a;
+	*stack_a = move_node->next;
+	move_node->next = *stack_b;
+	*stack_b = move_node;
+}	
